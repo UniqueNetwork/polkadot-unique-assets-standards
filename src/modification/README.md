@@ -24,9 +24,9 @@ This document specifies the standard modification API for Unique Assets for all 
 
 Clients need a uniform API implemented by all chains to modify Unique Assets in the ecosystem in a predictable and consistent way.
 
-Yet, the existing Unique Assets have diverse modification operations. Some modifications are specific to certain kinds of Unique Assets (like setting limits or a sponsor account for an NFT collection). In contrast, others are common for many kinds of Unique Assets (such as a transfer operation).
+The existing Unique Assets have diverse modification operations. Some modifications are specific to certain kinds of Unique Assets (like setting limits or a sponsor account for an NFT collection). In contrast, others are common for many kinds of Unique Assets (such as a transfer operation).
 
-Moreover, the same Unique Asset kinds have different implementations in different parachains and provide different (however, overlapping) APIs.
+The same Unique Asset kinds have different implementations in different parachains and provide different (possibly overlapping) APIs.
 
 This document aims to describe a generic facade API capable of abstracting the interface differences across various Unique Asset kinds and their different implementations without imposing any artificial limitations so that a client can know how to handle Unique Asset modification on any compliant chain.
 
@@ -42,11 +42,11 @@ As such, this document uses the types and terms defined in these standards.
 The generic API is specified as a Virtual Machine due to the flexibility of such a description.
 A VM can abstract many underlying details (which is the crucial property for making a generic API), it is extendable, and the overall terminology of VMs is widely known, so the standard reader might already have an intuition about that.
 
-Moreover, the overall simplicity of the VM representations (i.e., in terms of registers and instructions) reduces the likelihood of imposing artificial limitations on the API.
+The overall simplicity of the VM representations (i.e., in terms of registers and instructions) reduces the likelihood of imposing artificial limitations on the API.
 
-Also, a VM description naturally represents the influence of different operations on each other. The registers show the data flow between the instructions, allowing one to reason about the batch operations more easily and paving the way for various optimizations.
+A VM description naturally represents the influence of different operations on each other. The registers show the data flow between the instructions, allowing one to reason about the batch operations more easily and paving the way for various optimizations.
 
-Finally, since a VM has a natural modular structure (it consists of instructions), we can define a clear way of extending it and easily represent its implementation configuration in the Runtime.
+Since a VM has a natural modular structure (it consists of instructions), we can define a clear way of extending it and easily represent its implementation configuration in the Runtime.
 
 ### Pallet
 
@@ -274,7 +274,7 @@ await uavm.execute({
 
 ### Extension Instructions
 
-The UAVM instructions can be extended to include new ones. However, the additional instructions aren't mandatory unless explicitly added to the mandatory set (which generally should be avoided to maintain backward compatibility).
+The UAVM instructions can be extended to include new ones. The additional instructions aren't mandatory unless explicitly added to the mandatory set (which generally should be avoided to maintain backward compatibility).
 
 A particular instance of UAVM on a given chain may support any subset (including the whole set) of the extension instructions.
 
@@ -284,12 +284,12 @@ To avoid incompatibilities, a client must [query the UAVM's instance capabilitie
 
 The extension instructions must be described in the [Extension Instructions](./extension-instructions.md) document.
 
->Note that all asset-creating and asset-destroying instructions are extension instructions since these APIs vastly differ across NFT engines and other Unique Asset implementations. However, they can be classified into a small set of high-level instructions, so different implementations are abstracted into a small set of possible instruction alternatives.
+>Note that all asset-creating and asset-destroying instructions are extension instructions since these APIs vastly differ across NFT engines and other Unique Asset implementations. They can be classified into a small set of high-level instructions, so different implementations are abstracted into a small set of possible instruction alternatives.
 
 ### Querying UAVM Instance Capabilities
 
 A client can query the information about the UAVM's instance on a given chain.
 
-This information aims to help the client learn what XCM version is used, what Unique Assets are identifiable, and how they can be identified using XCM types. Moreover, it tells the client what instructions are supported by the chain and what influence paths exist between them.
+This information aims to help the client learn what XCM version is used, what Unique Assets are identifiable, and how they can be identified using XCM types. Also, it tells the client what instructions are supported by the chain and what influence paths exist between them.
 
 The specification of the report format and the correponding Runtime API can be found in the [Querying UACM Instance Capabilities](./querying-uavm-instance-capabilities.md) document.

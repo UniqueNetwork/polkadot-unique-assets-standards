@@ -96,7 +96,7 @@ pub enum ExtensionInstruction {
     /// and all asset's associated data remains intact and retrievable by the asset's ID.
     ///
     /// An unlinked asset should not be modifiable by the UAVM.
-    /// Other subsystems of a given chain, however, might change it.
+    /// Other subsystems of a given chain are allowed to change it.
     UnlinkSelectedAsset,
 }
 

@@ -10,7 +10,7 @@ The standards define a Unique Asset, how it can be identified throughout the eco
 The Polkadot ecosystem has the crucial advantage of interoperability between its participants in a secure and decentralized manner.
 Specialized blockchains (the parachains) participate in the shared Polkadot consensus while maintaining their sovereignty. This way, each parachain isn't restricted to what service it provides and how it should be built, which opens more possibilities for innovation.
 
-Yet, this also leads to fragmentation in the implementation of similar ideas. The different implementations have their strengths, and having them is a good thing. However, the fragmentation of the API and understanding of similar notions is causing friction to build the products for the end-users.
+This also leads to fragmentation in the implementation of similar ideas. The different implementations have their strengths, and having them is a good thing. But the fragmentation of the API and understanding of similar notions is also causing friction to build the products for the end-users.
 This is what happened with the Unique Assets (NFTs, CoreTime regions, and other unique objects like exchange pools) in the ecosystem.
 
 To overcome this, the standards are needed. The interactions between chains are standardized via XCM. It already provides a common language for expressing NFT transfers, and the approved [Fellowship RFC 125 "XCM Asset Metadata"](https://polkadot-fellows.github.io/RFCs/approved/0125-xcm-asset-metadata.html) paves the way for data communication between chains. With these tools, parachains are capable of interacting with each other. Unfortunately, this doesn't cover the client side.

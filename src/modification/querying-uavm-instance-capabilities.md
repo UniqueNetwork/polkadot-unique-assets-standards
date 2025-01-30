@@ -44,7 +44,7 @@ Every instruction capability report is an object of the following form:
 
 This document specifies the `InstructionCapabilities` type for all the defined instructions (both mandatory and extension ones).
 
-However, a given chain may provide a stripped version of it, with the extension ones partially or completely absent.
+A given chain may provide a stripped version of it, with the extension ones partially or completely absent.
 
 ```rust
 enum InstructionCapabilities {
