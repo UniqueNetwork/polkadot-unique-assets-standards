@@ -49,7 +49,7 @@ Since Unique Assets can be represented by individual assets like NFTs and their 
 
 This document follows the approach [described](https://polkadot-fellows.github.io/RFCs/approved/0125-xcm-asset-metadata.html#repurposing-assetinstanceundefined) in the Fellowship RFC 125 "XCM Asset Metadata".
 
-A Unique Asset that is **not** part of any group of assets (such as an NFT collection) can be identified as follows:
+A Unique Asset that represents a group of assets (such as an NFT collection) can be identified as follows:
 ```rust
 UniqueAsset {
     id: COLLECTION_ID, // `COLLECTION_ID` is a placeholder for a value.
