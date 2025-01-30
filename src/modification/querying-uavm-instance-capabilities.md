@@ -117,7 +117,7 @@ enum InstructionCapabilities {
 ///   }
 ///   ```
 /// Nothing else can be selected as a Unique Asset there (at the time of writing this text).
-/// Note that COLLECTION_ID is variable but the `id` prefix is fixed (at least when we are working with a single pallet).
+/// NOTE: COLLECTION_ID is variable but the `id` prefix is fixed (at least when we are working with a single pallet).
 /// The same goes for the ITEM_ID. It is variable but the `AssetInstance::Index` is fixed.
 ///
 /// A list of `SelectableAsset` objects tells the client the form of selectable assets on the given chain.

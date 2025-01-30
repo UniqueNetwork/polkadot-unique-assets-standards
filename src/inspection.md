@@ -84,7 +84,8 @@ trait UniqueAssetApi {
 The clients must interpret the metadata encoded in the transport-level format using the application-level formats. The chains must also honor the application-level formats, though only a few are mandatory.
 
 Each application-level format must have a unique name and a set of keys, and their value types must be defined. The format must also explicitly define what keys are mutable and, if so, how they are supposed to be mutated.
-Note that if a key is optional (or can be deleted if it exists), its type must be an `Option<T>`, where `T` can be substituted with any type in the key description.
+
+>NOTE: if a key is optional (or can be deleted if it exists), its type must be an `Option<T>`, where `T` can be substituted with any type in the key description.
 
 The formats must be listed in this section. More application-level formats can be added in the future.
 

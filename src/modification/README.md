@@ -34,8 +34,8 @@ This document aims to describe a generic facade API capable of abstracting the i
 
 The generic API is formulated as a virtual machine (the Unique Assets VM) to make it minimal in its core, provide flexibility in its implementation and configuration, and allow optimized batch operations.
 
-Note that the UAVM follows the [Identification Standard](../identification.md) and works with Unique Assets' metadata following the transport-level and application-level formats described in the [Inspection Standard](../inspection.md).
-As such, this document uses the types and terms defined in these standards.
+>NOTE: the UAVM follows the [Identification Standard](../identification.md) and works with Unique Assets' metadata following the transport-level and application-level formats described in the [Inspection Standard](../inspection.md).
+>As such, this document uses the types and terms defined in these standards.
 
 ### Rationale
 
@@ -145,7 +145,7 @@ For example, if the `program` uses the `V4` instructions and after its execution
         },
     }
     ```
-    >Note that this event must NOT be emitted if no actual change is made to the state, even if some update attempt has been made (e.g., an attempt to transfer the token to its current owner). 
+    >NOTE: this event must NOT be emitted if no actual change is made to the state, even if some update attempt has been made (e.g., an attempt to transfer the token to its current owner). 
 
 - When a Unique Asset is destroyed, the `UniqueAssetDestroyed` event must be emitted.
 For example, if the `program` uses the `V4` instructions and after its execution the collection #42 is destroyed, the following event must be emitted:
@@ -280,11 +280,11 @@ A particular instance of UAVM on a given chain may support any subset (including
 
 To avoid incompatibilities, a client must [query the UAVM's instance capabilities](#querying-uavm-instance-capabilities) before attempting to execute programs on a given chain.
 
->Note that the extension instructions MAY alter the behavior of other instructions, including the mandatory ones. If a given instruction alters the behavior of another one, it must be explicitly stated in its specification, and the alteration must be clearly defined.
+>NOTE: the extension instructions MAY alter the behavior of other instructions, including the mandatory ones. If a given instruction alters the behavior of another one, it must be explicitly stated in its specification, and the alteration must be clearly defined.
 
 The extension instructions must be described in the [Extension Instructions](./extension-instructions.md) document.
 
->Note that all asset-creating and asset-destroying instructions are extension instructions since these APIs vastly differ across NFT engines and other Unique Asset implementations. They can be classified into a small set of high-level instructions, so different implementations are abstracted into a small set of possible instruction alternatives.
+>NOTE: all asset-creating and asset-destroying instructions are extension instructions since these APIs vastly differ across NFT engines and other Unique Asset implementations. They can be classified into a small set of high-level instructions, so different implementations are abstracted into a small set of possible instruction alternatives.
 
 ### Querying UAVM Instance Capabilities
 
